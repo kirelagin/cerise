@@ -1,0 +1,59 @@
+cabal-version: 1.18
+
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           cerise
+version:        0.0.0.1
+synopsis:       Coupled relational symbolic execution (_CRSE_) analysis for differential privacy.
+description:    TBD
+category:       Privacy
+author:         Kirill Elagin <kir@elagin.me>
+maintainer:     Kirill Elagin <kir@elagin.me>
+copyright:      2021 Kirill Elagin
+license:        MPL-2.0
+license-file:   LICENSES/MPL-2.0.txt
+build-type:     Simple
+extra-doc-files:
+    CHANGELOG.md
+    README.md
+
+library
+  exposed-modules:
+      Cerise
+  other-modules:
+      Paths_cerise
+  hs-source-dirs:
+      lib
+  default-extensions: BangPatterns ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveGeneric DerivingStrategies FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns NumericUnderscores OverloadedStrings OverloadedLabels PatternSynonyms PolyKinds RankNTypes ScopedTypeVariables StandaloneDeriving TupleSections TypeApplications UndecidableInstances ViewPatterns
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <4.15
+    , bytestring >=0.9 && <0.11
+    , safe-exceptions >=0.1 && <0.2
+  default-language: Haskell2010
+
+test-suite cerise-lib-test
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_cerise
+  hs-source-dirs:
+      test/cerise-lib
+  default-extensions: BangPatterns ConstraintKinds DataKinds DefaultSignatures DeriveDataTypeable DeriveGeneric DerivingStrategies FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NamedFieldPuns NumericUnderscores OverloadedStrings OverloadedLabels PatternSynonyms PolyKinds RankNTypes ScopedTypeVariables StandaloneDeriving TupleSections TypeApplications UndecidableInstances ViewPatterns
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
+  build-tool-depends:
+      tasty-discover:tasty-discover
+  build-depends:
+      HUnit
+    , base >=4.7 && <4.15
+    , bytestring >=0.9 && <0.11
+    , cerise
+    , deepseq
+    , hedgehog
+    , safe-exceptions >=0.1 && <0.2
+    , tasty
+    , tasty-hedgehog
+    , tasty-hunit
+  default-language: Haskell2010
